@@ -94,22 +94,20 @@
         int count=0;
         String []arr= new String[other.getfFollows().length];
         arr=other.getfFollows();
-        for(int j=0;j<follows.length;j++)
-        {
-            if (follows[j]!="") 
-            {
-                for(int i=0;i<arr.length;i++)
-                {
-                    if (arr[i]!="") {
-                        if (arr[i]==this.follows[j]) 
-                        {
+        for (int j = 0; j < follows.length; j++) {
+        if (follows[j] != null && !follows[j].isEmpty()) {
+
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] != null && !arr[i].isEmpty()) {
+
+                    if (arr[i].equals(follows[j])) {
                         count++;
-                        }
+                        break; // חשוב!
                     }
                 }
             }
-            
         }
+    }
         return count;
     }
 
