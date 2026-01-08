@@ -64,8 +64,9 @@
         }
     }
     for (int i = 0; i < follows.length; i++) {
-        if (follows[i] == null) {
-            follows[i] = name;
+        if (this.follows[i] == null) {
+            this.follows[i] = name;
+            this.fCount++;
             return true;
         }
     }
@@ -112,7 +113,7 @@
         arr=other.follows;
         for(int i=0;i<arr.length;i++)
         {
-            if (arr[i].equals(this.name)) {
+            if (arr[i]==this.name) {
                 return true;
             }
         }
@@ -122,7 +123,7 @@
     public String toString() {
         String ans = name + " -> ";
         for (int i = 0; i < fCount; i++) {
-            ans = ans + follows[i] + " ";
+            ans = ans + this.follows[i] + " ";
         }
         return ans;
     }
