@@ -57,21 +57,18 @@
      *  If this user already follows the given name, or if the follows list is full, does nothing and returns false; */
     public boolean addFollowee(String name) {
         //// Replace the following statement with your code
-        for(int i=0;i<follows.length;i++)
-        {
-            if (follows[i].equals(name)) {
-                
-                return false;
-            }
+    for (int i = 0; i < follows.length; i++) 
+    {
+        if (follows[i] != null && follows[i].equals(name)) {
+            return false;
         }
-        
-        for(int j=0;j<follows.length;j++)
-        {
-            if (follows[j].equals(name)) {
-                follows[j]=name;
-                return true;
-            }
+    }
+    for (int i = 0; i < follows.length; i++) {
+        if (follows[i] == null) {
+            follows[i] = name;
+            return true;
         }
+    }
         return false;
     }
 
