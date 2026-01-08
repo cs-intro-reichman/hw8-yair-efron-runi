@@ -59,8 +59,16 @@
         //// Replace the following statement with your code
         for(int i=0;i<follows.length;i++)
         {
-            if (follows[i]=="") {
-                follows[i]=name;
+            if (follows[i]==name) {
+                
+                return false;
+            }
+        }
+        
+        for(int j=0;j<follows.length;j++)
+        {
+            if (follows[j]=="") {
+                follows[j]=name;
                 return true;
             }
         }
