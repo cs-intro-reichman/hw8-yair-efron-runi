@@ -117,7 +117,7 @@
         //// Replace the following statement with your code
         String []arr= new String[other.getfFollows().length];
         arr=other.getfFollows();
-        boolean oneside=true;
+        boolean oneside=false;
         for(int i=0;i<arr.length;i++)
         {
             if (arr[i] != null && !arr[i].isEmpty()) {
@@ -130,7 +130,7 @@
         if (!oneside) {
             return false;
         }
-        for(int i=0;i<arr.length;i++)
+        for(int i=0;i<follows.length;i++)
         {
             if (follows[i] != null && !follows[i].isEmpty()) {
                 if (follows[i].equals(other.getName())) {
