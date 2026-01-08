@@ -46,7 +46,7 @@
         //// Replace the following statement with your code
         for(int i=0;i<follows.length;i++)
         {
-            if (follows[i]==name) {
+            if (follows[i].equals(name)) {
                 
                 return true;
             }
@@ -80,7 +80,7 @@
     public boolean removeFollowee(String name) {
         for(int i=0;i<follows.length;i++)
         {
-            if (follows[i]==name) {
+            if (follows[i].equals(name)) {
                 follows[i]="";
                 return true;
             }
@@ -99,7 +99,7 @@
         {
             for(int i=0;i<arr.length;i++)
             {
-                if (arr[i]==this.follows[j]) {
+                if (arr[i].equals(this.follows[j])) {
                     count++;
                 }
             }
@@ -115,7 +115,7 @@
         arr=other.follows;
         for(int i=0;i<arr.length;i++)
         {
-            if (arr[i]==this.name) {
+            if (arr[i].equals(this.name)) {
                 return true;
             }
         }
