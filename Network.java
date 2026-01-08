@@ -56,9 +56,14 @@ public class Network {
                     return false;
                 }
             }
-            else{
+        } for(int i=0;i<users.length;i++)//this runs on the users in the network
+        {
+            if (users[i]==null) 
+            {
+               
                 users[i]=new User(name);   
                 return true; 
+            
             }
         }
         return false;
