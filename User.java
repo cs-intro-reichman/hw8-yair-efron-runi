@@ -93,14 +93,14 @@
          //// Replace the following statement with your code
         int count=0;
         String []arr= new String[other.getfFollows().length];
-        arr=other.follows;
+        arr=other.getfFollows();
         for(int j=0;j<follows.length;j++)
         {
             if (follows[j]!=null) 
             {
                 for(int i=0;i<arr.length;i++)
                 {
-                    if (arr[j]!=null) {
+                    if (arr[i]!=null) {
                         if (arr[i]==this.follows[j]) 
                         {
                         count++;
@@ -118,7 +118,7 @@
     public boolean isFriendOf(User other) {
         //// Replace the following statement with your code
         String []arr= new String[other.getfFollows().length];
-        arr=other.follows;
+        arr=other.getfFollows();
         for(int i=0;i<arr.length;i++)
         {
             if (arr[i]==this.name) {
