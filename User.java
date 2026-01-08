@@ -77,7 +77,7 @@
     public boolean removeFollowee(String name) {
         for(int i=0;i<follows.length;i++)
         {
-            if (follows==name) {
+            if (follows[i]==name) {
                 follows[i]=null;
                 return true;
             }
