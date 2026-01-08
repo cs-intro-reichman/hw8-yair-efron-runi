@@ -96,11 +96,11 @@
         arr=other.getfFollows();
         for(int j=0;j<follows.length;j++)
         {
-            if (follows[j]!=null) 
+            if (follows[j]!="") 
             {
                 for(int i=0;i<arr.length;i++)
                 {
-                    if (arr[i]!=null) {
+                    if (arr[i]!="") {
                         if (arr[i]==this.follows[j]) 
                         {
                         count++;
