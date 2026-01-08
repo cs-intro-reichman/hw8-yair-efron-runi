@@ -1,3 +1,5 @@
+import apple.security.KeychainStore.USER;
+
 /** Represents a social network. The network has users, who follow other uesrs.
  *  Each user is an instance of the User class. */
 public class Network {
@@ -90,7 +92,7 @@ public class Network {
                 }
             }
         }
-        if (!one&&!two) {
+        if (!one||!two) {
             return false;
         }
         if (one) {
@@ -103,22 +105,38 @@ public class Network {
             }
         }
         }
-        else
-        {
-            for(int i=0;i<users.length;i++)//this runs on the users in the network
-            {
-                if (users[i].getName().equals(name2))   
-                return users[i].addFollowee(name1); 
-            }
-        }
         return false;
     }
     
     /** For the user with the given name, recommends another user to follow. The recommended user is
      *  the user that has the maximal mutual number of followees as the user with the given name. */
     public String recommendWhoToFollow(String name) {
-        //// Replace the following statement with your code
-        return null;
+        User named=null;
+        for(int i=0;i<users.length;i++)//this runs on the users in the network
+        {
+            if (users[i]!=null) 
+            {
+                if (users[i].getName().equals(name)) 
+                {
+                    named=users[i];
+                }       
+            }
+        }
+        User save=null;
+        int mutual=0;
+        for(int k=0;k<users.length;k++)//this runs on the users in the network
+        {
+            if (users[k]!=null&&users[k]!=named) 
+            {
+                if (named.countMutual(users[k])>mutual) 
+                {
+                    save=users[k];
+                    mutual=named.countMutual(users[k]);
+                    
+                }
+            }
+        }
+        return save.getName();
     }
 
     /** Computes and returns the name of the most popular user in this network: 
