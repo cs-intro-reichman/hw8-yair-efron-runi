@@ -59,7 +59,7 @@
         //// Replace the following statement with your code
         for(int i=0;i<follows.length;i++)
         {
-            if (follows[i]==name) {
+            if (follows[i].equals(name)) {
                 
                 return false;
             }
@@ -67,7 +67,7 @@
         
         for(int j=0;j<follows.length;j++)
         {
-            if (follows[j]=="") {
+            if (follows[j].equals(name)) {
                 follows[j]=name;
                 return true;
             }
