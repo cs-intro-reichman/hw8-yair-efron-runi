@@ -96,12 +96,19 @@
         arr=other.follows;
         for(int j=0;j<follows.length;j++)
         {
-            for(int i=0;i<arr.length;i++)
+            if (follows[j]!=null) 
             {
-                if (arr[i].equals(this.follows[j])) {
-                    count++;
+                for(int i=0;i<arr.length;i++)
+                {
+                    if (arr[j]!=null) {
+                        if (arr[i]==this.follows[j]) 
+                        {
+                        count++;
+                        }
+                    }
                 }
             }
+            
         }
         return count;
     }
