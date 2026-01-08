@@ -56,7 +56,8 @@ public class Network {
                     return false;
                 }
             }
-        } for(int i=0;i<users.length;i++)//this runs on the users in the network
+        } 
+        for(int i=0;i<users.length;i++)//this runs on the users in the network
         {
             if (users[i]==null) 
             {
@@ -74,6 +75,42 @@ public class Network {
      *  or if the "follows" addition failed for some reason, returns false. */
     public boolean addFollowee(String name1, String name2) {
         //// Replace the following statement with your code
+        boolean one=false;
+        boolean two=false;
+        for(int i=0;i<users.length;i++)//checks if the one of them is in users
+        {
+            if (users[i]!=null) 
+            {
+                if (users[i].getName().equals(name1))
+                {
+                    one= true; 
+                }
+                if (users[i].getName().equals(name2)) {
+                    two=true;
+                }
+            }
+        }
+        if (!one&&!two) {
+            return false;
+        }
+        if (one) {
+            for(int i=0;i<users.length;i++)//this runs on the users in the network
+        {
+            if (users[i]!=null) 
+            {
+                if (users[i].getName().equals(name1))   
+                return users[i].addFollowee(name2); 
+            }
+        }
+        }
+        else
+        {
+            for(int i=0;i<users.length;i++)//this runs on the users in the network
+            {
+                if (users[i].getName().equals(name2))   
+                return users[i].addFollowee(name1); 
+            }
+        }
         return false;
     }
     
