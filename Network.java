@@ -48,6 +48,19 @@ public class Network {
     *  Otherwise, creates a new user with the given name, adds the user to this network, and returns true. */
     public boolean addUser(String name) {
         //// Replace the following statement with your code
+        for(int i=0;i<users.length;i++)//this runs on the users in the network
+        {
+            if (users[i]!=null) 
+            {
+                if (users[i].getName().equals(name)) {
+                    return false;
+                }
+            }
+            else{
+                users[i]=new User(name);   
+                return true; 
+            }
+        }
         return false;
     }
 
