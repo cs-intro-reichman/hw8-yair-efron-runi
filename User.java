@@ -102,7 +102,7 @@
 
                     if (arr[i].equals(follows[j])) {
                         count++;
-                        break; // חשוב!
+                        break; 
                     }
                 }
             }
@@ -119,9 +119,12 @@
         arr=other.getfFollows();
         for(int i=0;i<arr.length;i++)
         {
-            if (arr[i]==this.name) {
+            if (arr[i] != null && !arr[i].isEmpty()) {
+                if (arr[i].equals(name)) {
                 return true;
             }
+            }
+            
         }
         return false;
     }
