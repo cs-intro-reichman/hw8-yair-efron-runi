@@ -78,8 +78,9 @@
     public boolean removeFollowee(String name) {
         for(int i=0;i<follows.length;i++)
         {
-            if (follows[i]==name) {
+            if (follows[i]==name&&name!=null&&follows[i]!=null) {
                 follows[i]=null;
+                this.fCount--;
                 return true;
             }
         }
