@@ -155,7 +155,14 @@ public class Network {
 
     // Returns a textual description of all the users in this network, and who they follow.
     public String toString() {
-       //// Replace the following statement with your code
+       String result="";
+        for(int i=0;i<users.length;i++)//this runs on the users in the network
+        {
+            if (users[i]!=null) 
+            {
+                result=users[i].toString()+"\n";       
+            }
+        }
        return null;
     }
 }
